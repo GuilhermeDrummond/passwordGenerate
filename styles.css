@@ -1,4 +1,7 @@
 body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: rgb(40, 40, 40);
 }
 
@@ -13,9 +16,15 @@ button{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin-top: 10%;
-    gap: 40px;
+    gap: 60px;
     color: aliceblue;
+    background-color: rgb(24, 24, 24);
+    width: 25%;
+    padding: 20px;
+    border-radius: 20px;
+
 }
 
 .button {
@@ -26,4 +35,15 @@ button{
 .dificultPassword {
     display: flex;
     flex-direction: column;
+}
+
+#password {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+    color: black;
+    width: 400px;
+    height: 50px;
+    letter-spacing: 5px;
 }

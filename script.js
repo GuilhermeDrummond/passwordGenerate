@@ -15,18 +15,19 @@ function getRandomString(length) {
 document.addEventListener("DOMContentLoaded", function() {
     const password = document.querySelector("#password");
     const creatPassword = document.querySelector(".gerar");
-    const copy = document.querySelector(".copy")
+    const copy = document.querySelector(".copy");
+    const reset = document.querySelector(".reset");
+
+    reset.addEventListener("click", function(event){
+        password.textContent = "********************";
+    });
     
 
     creatPassword.addEventListener("click", function(event) {
-        const randomString = getRandomString(10);
+        const randomString = getRandomString(12);
         password.textContent = randomString;
     });
-    
-    creatPassword.addEventListener("click", function(event) {
-        const randomString = getRandomString(10);
-        password.textContent = randomString;
-    });
+
         //Copiar senha
     copy.addEventListener("click", function(event) {
         // Seleciona o texto do elemento password
