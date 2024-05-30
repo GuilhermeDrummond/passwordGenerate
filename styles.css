@@ -1,0 +1,29 @@
+body {
+    background-color: rgb(40, 40, 40);
+}
+
+button{
+    padding: 15px;
+    border-radius: 10px;
+    color: aliceblue;
+    background-color: rgb(96, 96, 96);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+    gap: 40px;
+    color: aliceblue;
+}
+
+.button {
+    display: flex;
+    gap: 50px;
+}
+
+.dificultPassword {
+    display: flex;
+    flex-direction: column;
+}
