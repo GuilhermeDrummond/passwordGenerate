@@ -1,53 +1,38 @@
-function getRandomCharacter() {
-    const characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+[]{}|;:,.<>?';
-    const randomIndex = Math.floor(Math.random() * characters.length);
-    return characters[randomIndex];
-}
+function gerarSenha() {
+    const tamanho = document.getElementById('tamanho').value;
+    const usarNumeros = document.getElementById('usarNumeros').checked;
+    const usarLetras = document.getElementById('usarLetras').checked;
+    const usarSimbolos = document.getElementById('usarSimbolos').checked;
 
-function getRandomString(length) {
-    let result = '';
-    for (let i = 0; i < length; i++) {
-        result += getRandomCharacter();
+    let caracteres = '';
+    if (usarNumeros) caracteres += '0123456789';
+    if (usarLetras) caracteres += 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    if (usarSimbolos) caracteres += '!@#$%^&*()_+[]{}|;:,.<>?';
+
+    if (!caracteres) {
+        alert('Selecione pelo menos uma opção (números, letras, símbolos)');
+        return;
     }
-    return result;
+
+    let senha = '';
+    for (let i = 0; i < tamanho; i++) {
+        senha += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+    }
+
+    document.getElementById('senha').value = senha;
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    const password = document.querySelector("#password");
-    const creatPassword = document.querySelector(".gerar");
-    const copy = document.querySelector(".copy");
-    const reset = document.querySelector(".reset");
+function copiarSenha() {
+    const senha = document.getElementById('senha');
+    senha.select();
+    senha.setSelectionRange(0, 99999);  // Para dispositivos móveis
 
-    reset.addEventListener("click", function(event){
-        password.textContent = "********************";
-    });
-    
+    document.execCommand('copy');
+    alert('Senha copiada para a área de transferência');
+}
 
-    creatPassword.addEventListener("click", function(event) {
-        const randomString = getRandomString(12);
-        password.textContent = randomString;
-    });
-
-        //Copiar senha
-    copy.addEventListener("click", function(event) {
-        // Seleciona o texto do elemento password
-        const textToCopy = password.textContent;
-
-        // Cria um elemento de input temporário
-        const tempInput = document.createElement("input");
-        tempInput.value = textToCopy;
-        document.body.appendChild(tempInput);
-
-        // Seleciona o texto no input temporário
-        tempInput.select();
-
-        // Copia o texto selecionado para a área de transferência
-        document.execCommand("copy");
-
-        // Remove o input temporário
-        document.body.removeChild(tempInput);
-        
-        // Feedback para o usuário
-        alert("Senha copiada para a área de transferência!");
-    });
+document.addEventListener("click", function(e) {
+    if (e.target.classList.contains('reset')) {
+        document.getElementById('senha').value = '';
+    }
 });

@@ -1,49 +1,84 @@
 body {
+    font-family: Arial, sans-serif;
     display: flex;
-    align-items: center;
     justify-content: center;
-    background-color: rgb(40, 40, 40);
-}
-
-button{
-    padding: 15px;
-    border-radius: 10px;
-    color: aliceblue;
-    background-color: rgb(96, 96, 96);
+    align-items: center;
+    height: 100vh;
+    background-color: #515151;
+    margin: 0;
 }
 
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-top: 10%;
-    gap: 60px;
-    color: aliceblue;
-    background-color: rgb(24, 24, 24);
-    width: 25%;
-    padding: 20px;
-    border-radius: 20px;
-
+    justify-items: center;
+    background-color: #ffffff;
+    padding: 100px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
 }
 
-.button {
+h1 {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#tamanho {
+    padding-left: 20px;
+    width: 40px;
+    height: 30px;
+    font-size: medium;
+    margin-bottom: 20px;
+}
+.options {
     display: flex;
-    gap: 50px;
+    gap: 10px;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.options label {
+    display: flex;
+    letter-spacing: 2px;
+    font-size:large;
+    margin: 5px 0;
+
 }
 
-.dificultPassword {
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.output {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
 }
 
-#password {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: aliceblue;
-    color: black;
-    width: 400px;
-    height: 50px;
-    letter-spacing: 5px;
+#senha {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+.output button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
 }

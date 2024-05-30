@@ -1,24 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gerador de Senhas</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h2>PASSWORD GENERATOR</h2>
+        <h1>Gerador de Senhas</h1>
+        <label for="tamanho">Tamanho da senha:</label>
+        <input type="number" id="tamanho" value="8" min="1">
 
-
-        <div class="button">
-            <button class="gerar">Gerar!</button>
-            <button class="reset">Reset</button>
-            <button class="copy">Copiar</button>
+        <div class="options">
+            <label><input type="checkbox" id="usarNumeros" checked> Incluir Números</label>
+            <label><input type="checkbox" id="usarLetras" checked> Incluir Letras</label>
+            <label><input type="checkbox" id="usarSimbolos" checked> Incluir Símbolos</label>
         </div>
-        <h2 id="password">********************</h2>
+
+        <button onclick="gerarSenha()">Gerar Senha</button>
+        <div class="output">
+            <label for="senha">Senha Gerada:</label>
+            <input type="text" id="senha" readonly>
+            <div>
+                <button onclick="copiarSenha()">Copiar</button>
+                <button class="reset">Reset</button>
+            </div>
+        </div>
     </div>
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 </html>
